@@ -15,8 +15,18 @@ const  NewInputNote: React.FC = () => {
     }
 
     const onAddNoteClick = () => {
+        if(!note.trim()){
+            alert('Error: "Empty note"')
+            return
+        }
         dispatch(addTodo(note))
         setNote('')
+    }
+
+    const keyHandler = (event: React.KeyboardEvent) => {
+        if(event.key === 'Enter'){
+            onAddNoteClick()
+        }
     }
     
     return (
@@ -27,6 +37,7 @@ const  NewInputNote: React.FC = () => {
                 type={'text'} 
                 placeholder='enter your note'
                 className={styles.input}
+                onKeyPress={keyHandler}
             />
             <button
             className={styles.btn} 

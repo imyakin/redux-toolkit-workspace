@@ -1,5 +1,5 @@
 .collection{
-    width: 30%;
+    width: 100%;
     margin: 5px 0 0 15px;
 }
 
@@ -7,7 +7,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    box-shadow: 4px 4px 10px rgba(0,0,0, 0.25);
     padding: 10px;
     background-color: #c6ff00;
     margin-top: 5px;
@@ -17,4 +17,13 @@
 .delete_btn{
     color: #ff3d00;
     cursor: pointer;
+}
+
+.edit_btn{
+    color: #000;
+    cursor: pointer;
+}
+
+.icons {
+    justify-content: flex-end;
 }

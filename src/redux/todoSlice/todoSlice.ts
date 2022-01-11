@@ -25,6 +25,10 @@ export const todoSlice = createSlice({
         removeTodo: (state, action)=>{
             state.todos.splice(action.payload, 1)
         },
+        editTodo: (state, action)=>{
+            const [index, newNote] = action.payload
+            state.todos[index].name = newNote
+        },
         toggleTodo: (state, action) => {
             state.todos[action.payload].completed = !state.todos[action.payload].completed
         }

@@ -1,0 +1,20 @@
+.container{
+    
+    width: 300px;
+    
+}
+
+.work_slider{
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.thumb{
+    box-sizing: border-box;
+    background-color: red;
+    width: 40px;
+    height: 38px;
+    cursor: pointer;
+}
