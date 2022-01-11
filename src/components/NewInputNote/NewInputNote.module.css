@@ -1,0 +1,38 @@
+.flex{
+    display: flex;
+    justify-content: flex-start;
+    width: 30%;
+    margin: 5px 0 0 15px;
+}
+
+.btn {
+    background-color: #64ffda;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 10px;
+    width: 30%;
+
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 27px;
+    color: #263238;
+}
+
+.input {
+    border: none;
+    width: 100%;
+    background: #a7ffeb;
+    border-radius: 5px 0px 0px 5px;
+
+    font-family: Manrope;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 27px;
+    text-align: center;
+    color: #263238;
+    outline: none;
+}
