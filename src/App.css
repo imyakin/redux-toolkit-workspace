@@ -19,6 +19,13 @@ button {
   cursor: pointer;
 }
 
+label{
+  display: block;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  
+}
+
 .app_container_body{
   margin-top: 20px;
   display: flex;
