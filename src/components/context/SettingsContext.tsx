@@ -5,6 +5,7 @@ interface context {
     breakMinutes: number;
     setWorkMinutes: (num: number) => void;
     setBreakMinutes: (num: number) => void;
+    setShowSettings: (el: boolean) => void;
 }
 
 const SettingsContext = React.createContext({} as context)
