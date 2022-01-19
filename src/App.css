@@ -1,5 +1,5 @@
 * {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -26,10 +26,20 @@ label{
   
 }
 
+.app_container{
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .app_container_body{
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+}
+
+.navbar{
+  margin-top: 40px;
 }
 
