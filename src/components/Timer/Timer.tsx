@@ -12,7 +12,7 @@ type Mode = 'work' | 'break' | null
 const Timer = () => {
     const settingsInfo = useContext(SettingsContext)
     const [isPaused, setIsPaused] = useState(true)
-    const [mode, setMode] = useState('break')
+    const [mode, setMode] = useState('break' as Mode)
     const [secondsLeft, setSecondsLeft] = useState(0)
 
     const secondsLeftRef = useRef(secondsLeft)

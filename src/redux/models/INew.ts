@@ -1,10 +1,6 @@
-interface Sourse{
-    id: string;
-    name: string;
-}
 
 export interface INew{
-    source?: Sourse;
+    source?: {id: string; name: string};
     author?: string;
     title?: string;
     description?: string;

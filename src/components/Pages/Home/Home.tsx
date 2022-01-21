@@ -4,8 +4,8 @@ import Notes from '../../Notes/Notes';
 import SettingsContext from '../../context/SettingsContext';
 import Settings from '../../Timer/Settings';
 import Timer from '../../Timer/Timer';
-import NewsNavBar from '../../NewsNavBar/NewsNavBar';
 import styles from './Home.module.css'
+import HomeNavBar from '../../HomeNavBar/HomeNavBar';
 
 const Home = () => {
     const [showSettings, setShowSettings] = useState(false)
@@ -39,7 +39,7 @@ const Home = () => {
       </div>
                 
       <div className={styles.navbar}>
-        <NewsNavBar/>
+        <HomeNavBar/>
       </div>
       </>
     )
