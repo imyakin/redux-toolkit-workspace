@@ -6,6 +6,7 @@ import Settings from '../../Timer/Settings';
 import Timer from '../../Timer/Timer';
 import styles from './Home.module.css'
 import HomeNavBar from '../../HomeNavBar/HomeNavBar';
+import Clock from '../../Clock/Clock';
 
 const Home = () => {
     const [showSettings, setShowSettings] = useState(false)
@@ -14,8 +15,11 @@ const Home = () => {
 
     return (
         <>
+        <div className={styles.header}>
+          <h1>Manage your work</h1>
+          <Clock/>
+        </div>
         <div className={styles.container}>
-            <h1 style={{textAlign: 'center'}}>Manage your work</h1>
           <div className={styles.body}>
             <div>
               <NewInputNote/>
