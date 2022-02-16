@@ -13,32 +13,34 @@ interface NewsProps{
 const News: React.FC<NewsProps> = ({urlLink, newsTitle}) => {
     const [datanews, setDataNews] = useState([] as INew[])
     const [error, setError] = useState(false)
+    
 
-    const fetchData = async () => {
-        try{
-            const url = urlLink
-            const response = await axios.get(url)
-            setDataNews(response.data.articles)
-        } catch(error){
-            setError(true);
-            console.log(error)
-        };
-    }
-
+    
     useEffect(() => {
+        const fetchData = async () => {
+            try{
+                const url = urlLink
+                const response = await axios.get(url)
+                setDataNews(response.data.articles)
+            } catch(error){
+                setError(true);
+                console.log(error)
+            };
+        }
         fetchData()
-    }, [])
+    }, [urlLink])
    
     return (
 
         !error ? 
         <>
-            <NewsNavBar title={newsTitle}/>
-            <div className='row' style={{display: 'flex', flexWrap: 'wrap'}}>
-                {datanews && datanews.map((newsItem) => {
-                return <NewSingle key={newsItem.url} item={newsItem}/>
-            })}
-            </div>
+            <NewsNavBar title={newsTitle}>
+                <div className='row' style={{display: 'flex', flexWrap: 'wrap'}}>
+                    {datanews && datanews.map((newsItem) => {
+                    return <NewSingle key={newsItem.url} item={newsItem}/>
+                })}
+                </div>
+            </NewsNavBar>
         </>
         : <Error text={'There are no news, check your sources'}/>
     )
