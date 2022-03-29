@@ -7,7 +7,7 @@ interface ErrorProps {
 const Error: React.FC<ErrorProps> = ({text}) => {
     return (
         <div>
-            <h1>{text}</h1>
+            <label style={{color: "red"}}>{text}</label>
         </div>
     )
 }
