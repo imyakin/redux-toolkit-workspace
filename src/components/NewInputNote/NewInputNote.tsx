@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react'
+import React from 'react'
 import { useAppDispatch } from '../../redux/hooks/hooks'
 import { todoSlice } from '../../redux/todoSlice/todoSlice'
 import styles from './NewInputNote.module.css'
@@ -7,28 +7,21 @@ import Error from '../Error/Error'
 
 
 const  NewInputNote: React.FC = () => {
-    // const [note, setNote] = useState("")
     const dispatch = useAppDispatch()
     const {addTodo} = todoSlice.actions
     const note = useInput({minLength: 3, isEmpty: true})
-    
-
-    // const updateNote = (event: ChangeEvent<HTMLInputElement>) => {
-    //    setNote(event.target.value)
-    // }
 
     const onAddNoteClick = () => {
         dispatch(addTodo(note.value))
         note.setValue('')
-        note.setIsEmpty(true)
-        note.setMinLengthError(false)
+        note.setIsDirty(false)
     }
 
-    // const keyHandler = (event: React.KeyboardEvent) => {
-    //     if(event.key === 'Enter'){
-    //         onAddNoteClick()
-    //     }
-    // }
+    const keyHandler = (event: React.KeyboardEvent) => {
+        if(event.key === 'Enter' && note.inputValid){
+            onAddNoteClick()
+        }
+    }
     
     return (
         <>
@@ -43,7 +36,7 @@ const  NewInputNote: React.FC = () => {
                     onBlur={e => note.onBlur(e)}
                     placeholder='enter your note'
                     className={styles.input}
-                    // onKeyPress={keyHandler}
+                    onKeyPress={keyHandler}
                 />
                 <button
                     className={styles.btn}

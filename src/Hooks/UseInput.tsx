@@ -1,4 +1,4 @@
-import React, {ChangeEvent, useEffect, useState} from "react"
+import {ChangeEvent, useEffect, useState} from "react"
 interface Valid {
     isEmpty: boolean
     minLength: number
@@ -21,7 +21,7 @@ const useValidation = (value: string, validations: Valid) => {
                     break;
             }
         }
-    }, [value])
+    }, [value, validations])
 
     useEffect(() => {
         if(isEmpty || minLengthError){
@@ -51,6 +51,9 @@ const useInput = (validations: Valid) => {
 
     const onBlur = (event: ChangeEvent<HTMLInputElement>) => {
         setIsDirty(true)
+        setTimeout(() => {
+            setIsDirty(false)
+        }, 2000)
     }
 
     return {
@@ -59,6 +62,7 @@ const useInput = (validations: Valid) => {
         onChange,
         onBlur,
         isDirty,
+        setIsDirty,
         ...valid
     }
 }
