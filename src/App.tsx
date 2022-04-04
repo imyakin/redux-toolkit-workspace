@@ -15,7 +15,7 @@ function App() {
 
   const routes = [
     {
-    path: "/",
+    path: "/workflow",
     element: <Home/>
     },
     {
