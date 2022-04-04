@@ -9,7 +9,7 @@ function App() {
   
   enum news {
     BBC = 'https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=4d0211344ea24cacaf4c9767a39beb6b',
-    Apple = 'https://newsapi.org/v2/everything?q=apple&from=2022-01-18&to=2022-01-18&sortBy=popularity&apiKey=4d0211344ea24cacaf4c9767a39beb6b',
+    WallStreet = 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey=4d0211344ea24cacaf4c9767a39beb6b',
     Bitcoin = 'https://newsapi.org/v2/everything?q=bitcoin&apiKey=4d0211344ea24cacaf4c9767a39beb6b'
   }
 
@@ -19,8 +19,8 @@ function App() {
     element: <Home/>
     },
     {
-    path: "/apple",
-    element: <News newsTitle='Apple News' urlLink={news.Apple}/>
+    path: "/wallstreet",
+    element: <News newsTitle='Wall Street News' urlLink={news.WallStreet}/>
     },
     {
     path: "/bbc",
